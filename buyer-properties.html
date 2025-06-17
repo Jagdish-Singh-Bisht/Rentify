@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Property Listings - Rentify</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f4f6f8; padding: 20px; }
+    header { text-align: center; margin-bottom: 20px; }
+    header h1 { color: #2c3e50; }
+
+    .filters {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .filters select {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .property-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+    .property-card:hover { transform: translateY(-5px); }
+
+    .property-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .property-info {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .property-info h3 {
+      font-size: 18px;
+      color: #34495e;
+      margin-bottom: 8px;
+    }
+    .property-info p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .property-info .status {
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #27ae60;
+    }
+    .property-info .btn {
+      margin-top: auto;
+      padding: 10px;
+      background: #3498db;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .property-info .btn:hover { background: #2980b9; }
+
+    .no-results {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 18px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Property Listings for Buyers</h1>
+    <p>Select filters below to narrow down your search.</p>
+  </header>
+
+  <div class="filters">
+    <select id="locationFilter">
+      <option value="all">All Locations</option>
+      <option value="Noida">Noida</option>
+      <option value="Gurugram">Gurugram</option>
+      <option value="Delhi">Delhi</option>
+    </select>
+    <select id="typeFilter">
+      <option value="all">All Types</option>
+      <option value="1BHK">1BHK</option>
+      <option value="2BHK">2BHK</option>
+      <option value="3BHK">3BHK</option>
+    </select>
+    <select id="priceFilter">
+      <option value="all">All Price Ranges</option>
+      <option value="0-10000">₹0 - ₹10k</option>
+      <option value="10000-20000">₹10k - ₹20k</option>
+      <option value="20000+">₹20k+</option>
+    </select>
+  </div>
+
+  <div class="cards-container" id="cardsContainer">
+    <!-- Property Card 1 -->
+    <div class="property-card" data-location="Noida" data-type="2BHK" data-price="10000-20000">
+      <img src="https://via.placeholder.com/400x200.png?text=2BHK+Noida" alt="2BHK Flat in Noida">
+      <div class="property-info">
+        <h3>2BHK Flat in Noida Sector 15</h3>
+        <p>₹12,000/month • 950 sq.ft • 2 Bath</p>
+        <div class="status">Status: Verified ✅</div>
+        <a href="property-detail1.html" class="btn">View Details</a>
+      </div>
+    </div>
+    <!-- Property Card 2 -->
+    <div class="property-card" data-location="Gurugram" data-type="3BHK" data-price="20000+">
+      <img src="https://via.placeholder.com/400x200.png?text=3BHK+Gurugram" alt="3BHK Flat in Gurugram">
+      <div class="property-info">
+        <h3>3BHK Apartment in Gurugram Sector 45</h3>
+        <p>₹25,000/month • 1200 sq.ft • 3 Bath</p>
+        <div class="status">Status: Verified ✅</div>
+        <a href="property-detail2.html" class="btn">View Details</a>
+      </div>
+    </div>
+    <!-- Property Card 3 -->
+    <div class="property-card" data-location="Delhi" data-type="1BHK" data-price="0-10000">
+      <img src="https://via.placeholder.com/400x200.png?text=1BHK+Delhi" alt="1BHK Flat in Delhi">
+      <div class="property-info">
+        <h3>1BHK Studio in Delhi East</h3>
+        <p>₹8,500/month • 550 sq.ft • 1 Bath</p>
+        <div class="status">Status: Verified ✅</div>
+        <a href="property-detail3.html" class="btn">View Details</a>
+      </div>
+    </div>
+    <!-- Property Card 4 -->
+    <div class="property-card" data-location="Noida" data-type="3BHK" data-price="20000+">
+      <img src="https://via.placeholder.com/400x200.png?text=3BHK+Noida" alt="3BHK Villa in Noida">
+      <div class="property-info">
+        <h3>3BHK Villa in Noida Sector 50</h3>
+        <p>₹28,000/month • 1500 sq.ft • 3 Bath</p>
+        <div class="status">Status: Verified ✅</div>
+        <a href="property-detail4.html" class="btn">View Details</a>
+      </div>
+    </div>
+    <!-- Property Card 5 -->
+    <div class="property-card" data-location="Gurugram" data-type="2BHK" data-price="10000-20000">
+      <img src="https://via.placeholder.com/400x200.png?text=2BHK+Gurugram" alt="2BHK Flat in Gurugram">
+      <div class="property-info">
+        <h3>2BHK Flat in Gurugram Sector 56</h3>
+        <p>₹15,000/month • 1000 sq.ft • 2 Bath</p>
+        <div class="status">Status: Verified ✅</div>
+        <a href="property-detail5.html" class="btn">View Details</a>
+      </div>
+    </div>
+    <!-- Property Card 6 -->
+    <div class="property-card" data-location="Delhi" data-type="3BHK" data-price="20000+">
+      <img src="https://via.placeholder.com/400x200.png?text=3BHK+Delhi" alt="3BHK Penthouse in Delhi">
+      <div class="property-info">
+        <h3>3BHK Penthouse in Delhi South</h3>
+        <p>₹30,000/month • 1400 sq.ft • 3 Bath</p>
+        <div class="status">Status: Verified ✅</div>
+        <a href="property-detail6.html" class="btn">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" id="noResults" style="display: none;">
+    No properties match your filters.
+  </div>
+
+  <script>
+    const filters = {
+      location: document.getElementById('locationFilter'),
+      type: document.getElementById('typeFilter'),
+      price: document.getElementById('priceFilter')
+    };
+    const cardsContainer = document.getElementById('cardsContainer');
+    const noResults = document.getElementById('noResults');
+
+    Object.values(filters).forEach(select => {
+      select.addEventListener('change', applyFilters);
+    });
+
+    function applyFilters() {
+      const loc = filters.location.value;
+      const type = filters.type.value;
+      const price = filters.price.value;
+      let visibleCount = 0;
+
+      document.querySelectorAll('.property-card').forEach(card => {
+        const cardLoc = card.dataset.location;
+        const cardType = card.dataset.type;
+        const cardPrice = card.dataset.price;
+
+        const matchLoc = (loc === 'all' || cardLoc === loc);
+        const matchType = (type === 'all' || cardType === type);
+        const matchPrice = (price === 'all' || (price.endsWith('+') ? Number(cardPrice.split('+')[0]) >= Number(price) : inRange(cardPrice, price)));
+
+        if (matchLoc && matchType && matchPrice) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    function inRange(cardRange, filterRange) {
+      const [min, max] = filterRange.split('-').map(Number);
+      const [cMin, cMax] = cardRange.split('-').map(Number);
+      return cMin >= min && (cMax <= max || isNaN(max));
+    }
+  </script>
+</body>
+</html>

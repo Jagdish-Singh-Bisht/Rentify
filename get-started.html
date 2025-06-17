@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Get Started Dropdown Fix</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Basic Reset and Modern Styling */
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #333;
+  }
+
+  nav {
+    background-color: #f9fafb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f2937;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 0;
+  }
+
+  .nav-link:hover, .nav-link:focus {
+    color: #3b82f6; /* blue-500 */
+    outline: none;
+  }
+
+  .material-icons.dropdown-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Dropdown Submenu */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    margin-top: 8px;
+    min-width: 180px;
+    padding: 8px 0;
+    display: none;
+    z-index: 1000;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 24px;
+    font-size: 14px;
+    color: #374151;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .dropdown-menu a:hover, .dropdown-menu a:focus {
+    background-color: #e0e7ff; /* light indigo */
+    color: #1e40af; /* indigo-800 */
+    outline: none;
+  }
+
+  /* Show dropdown on hover on devices that support hover */
+  @media (hover: hover) and (pointer: fine) {
+    .nav-item:hover > .dropdown-menu {
+      display: block;
+    }
+
+    .nav-item:hover > .nav-link > .dropdown-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* For click toggle */
+  .nav-item.open > .dropdown-menu {
+    display: block;
+  }
+
+  .nav-item.open > .nav-link > .dropdown-icon {
+    transform: rotate(180deg);
+  }
+</style>
+</head>
+<body>
+<nav>
+  <ul class="nav-list" role="menubar" aria-label="Primary">
+    <li class="nav-item" role="none" id="getStartedMenu">
+      <a href="#" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" id="getStartedButton">
+        Get Started
+        <span class="material-icons dropdown-icon" aria-hidden="true">expand_more</span>
+      </a>
+      <div class="dropdown-menu" role="menu" aria-labelledby="getStartedButton">
+        <a href="rental-guide.html" role="menuitem" tabindex="-1">Rental Guide</a>
+        <a href="#" role="menuitem" tabindex="-1">Wishlist</a>
+        <a href="#" role="menuitem" tabindex="-1">Other Option</a>
+      </div>
+    </li>
+    <li class="nav-item" role="none">
+      <a href="#" class="nav-link" role="menuitem" tabindex="0">About</a>
+    </li>
+    <li class="nav-item" role="none">
+      <a href="#" class="nav-link" role="menuitem" tabindex="0">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  // Accessibility and click toggle for dropdown menu
+  const getStartedMenu = document.getElementById('getStartedMenu');
+  const getStartedButton = document.getElementById('getStartedButton');
+
+  getStartedButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    const isOpen = getStartedMenu.classList.toggle('open');
+    getStartedButton.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close the dropdown if clicked outside
+  document.addEventListener('click', (event) => {
+    if (!getStartedMenu.contains(event.target)) {
+      getStartedMenu.classList.remove('open');
+      getStartedButton.setAttribute('aria-expanded', false);
+    }
+  });
+
+  // Keyboard navigation support: close on Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === "Escape") {
+      if (getStartedMenu.classList.contains('open')) {
+        getStartedMenu.classList.remove('open');
+        getStartedButton.setAttribute('aria-expanded', false);
+        getStartedButton.focus();
+      }
+    }
+  });
+</script>
+</body>
+</html>
+

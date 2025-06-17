@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Started - Rentify</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .circle-menu {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      animation: spinIn 1s ease-out;
+    }
+
+    .circle-menu .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .circle-menu .item {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #3498db;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease, background 0.3s ease;
+      animation: popIn 0.5s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    .circle-menu .item:hover {
+      background: #1abc9c;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    /* Rotational Positions */
+    .item:nth-child(2) { top: 0; left: 50%; transform: translate(-50%, 0); animation-delay: 0.3s; }
+    .item:nth-child(3) { top: 20%; right: 0; transform: translate(0, -50%); animation-delay: 0.4s; }
+    .item:nth-child(4) { bottom: 20%; right: 0; transform: translate(0, 50%); animation-delay: 0.5s; }
+    .item:nth-child(5) { bottom: 0; left: 50%; transform: translate(-50%, 0); animation-delay: 0.6s; }
+    .item:nth-child(6) { bottom: 20%; left: 0; transform: translate(0, 50%); animation-delay: 0.7s; }
+    .item:nth-child(7) { top: 20%; left: 0; transform: translate(0, -50%); animation-delay: 0.8s; }
+
+    /* Spin In Animation */
+    @keyframes spinIn {
+      0% {
+        transform: rotate(-180deg) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Pop in each item */
+    @keyframes popIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Optional Slow Rotation */
+    .circle-menu:hover {
+      animation: rotateDial 10s linear infinite;
+    }
+
+    @keyframes rotateDial {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="circle-menu">
+    <div class="center">Get Started</div>
+
+    <div class="item" onclick="location.href='buyer.html'">For Buyers</div>
+    <div class="item" onclick="location.href='tenant.html'">For Tenants</div>
+    <div class="item" onclick="location.href='owner.html'">For Owners</div>
+    <div class="item" onclick="location.href='rental-guide.html'">Rental Guide</div>
+    <div class="item" onclick="location.href='loans.html'">Home Loans</div>
+    <div class="item" onclick="location.href='insights.html'">Insights</div>
+
+  </div>
+
+</body>
+</html>

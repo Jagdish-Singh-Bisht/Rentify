@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rental Guide | Rentify</title>
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fbff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+
+    .rental-guide {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .rental-guide h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .guide-box {
+      margin-bottom: 2rem;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-left: 6px solid #0077cc;
+    }
+
+    .guide-box h3 {
+      color: #0077cc;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .guide-box ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    .guide-box li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Emoji style option */
+    .guide-box li::marker {
+      color: #0077cc;
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🏠 RENTIFY</div>
+  </header>
+
+  <main class="rental-guide">
+    <h2>Rental Guide</h2>
+
+    <section class="guide-box">
+      <h3>For Students & Young Families</h3>
+      <ul>
+        <li>🔍 Always visit the property before renting</li>
+        <li>📑 Read the rental agreement thoroughly</li>
+        <li>📍 Check for proximity to metro, school, college, market</li>
+        <li>🧑‍🤝‍🧑 Meet current or past tenants if possible</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h3>Documents You’ll Need</h3>
+      <ul>
+        <li>ID Proof (Aadhaar, Passport)</li>
+        <li>Proof of Income or Student ID</li>
+        <li>Guarantor (for students, if required)</li>
+        <li>Passport-size Photos</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h3>Tenant Rights in India</h3>
+      <ul>
+        <li>Right to receive rent receipt</li>
+        <li>Right to notice before eviction</li>
+        <li>Security deposit limits vary by state</li>
+        <li>Landlord must maintain basic amenities</li>
+      </ul>
+    </section>
+
+    <section class="guide-box">
+      <h3>Tips for First-Time Renters</h3>
+      <ul>
+        <li>Make a checklist before moving in</li>
+        <li>Ask about maintenance and utility bills</li>
+        <li>Look for rental scams (avoid paying before documentation)</li>
+        <li>Document property condition with photos</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
