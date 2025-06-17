@@ -5,21 +5,6 @@ if (!isset($_SESSION['loggedin'])) {
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- property-detail3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,12 +56,12 @@ if (!isset($_SESSION['loggedin'])) {
       ✔ Verified on 15 May 2025
     </div>
     <div class="contact-card">
-      <strong>Owner:</strong> Rahul Verma (Verified Owner)<br>
+      <strong>Owner:</strong> Aamir Khan (Owner Verified)<br>
       <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
-      📞 Phone: +91 9876543210<br>
-      📧 Email: rahul.verma@email.com
+        📞 Phone: +91 9876543210<br>
+        📧 Email: aamir.khan@rentify.in
       <?php else: ?>
-      <a href="login.html" class="contact-btn">Login to View Contact</a>
+        <a href="login.html" class="contact-btn">Login to View Contact</a>
       <?php endif; ?>
     </div>
   </div>

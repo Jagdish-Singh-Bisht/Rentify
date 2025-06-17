@@ -2,33 +2,34 @@
 
 
 
-<!-- -------------------------------------------------------------- -->
 
 
-
-
-
-
-
-
-<!-- ---------------------------------------------------- -->
-
-
-
-<?php
-include 'db_connect.php'; // Connects to DB
+ <?php
+session_start();
+include 'db_connect.php';
 
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
-// Fetch user
 $sql = "SELECT * FROM users WHERE email='$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows === 1) {
     $row = $result->fetch_assoc();
+
     if (password_verify($pass, $row['password'])) {
-        echo "Login successful! Welcome, " . $row['username'];
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $row['username'];
+
+        // Redirect logic
+        if (isset($_GET['redirect'])) {
+            $redirectTo = $_GET['redirect'];
+        } else {
+            $redirectTo = '../index.html'; // default fallback
+        }
+
+        header("Location: $redirectTo");
+        exit;
     } else {
         echo "Incorrect password.";
     }
@@ -36,47 +37,5 @@ if ($result->num_rows === 1) {
     echo "User not found.";
 }
 
-
-
-if (password_verify($pass, $row['password'])) {
-    header("Location: ../index.html");
-    exit();
-}
-
-
-
-
-
-<?php
-session_start();
-
-// Your login validation here...
-
-if ($validLogin) {
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $username;
-
-    if (isset($_SESSION['redirect_to'])) {
-        $redirectTo = $_SESSION['redirect_to'];
-        unset($_SESSION['redirect_to']);
-        header("Location: $redirectTo");
-    } else {
-        header("Location: index.html"); // or homepage
-    }
-    exit;
-}
-?>
-
-
-
 $conn->close();
 ?>
- 
-
-
-
-
-<!-- -------------------------------------------------- -->
-
-
-

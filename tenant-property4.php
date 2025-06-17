@@ -1,21 +1,15 @@
+<!-- tenant-property-detail4.php -->
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])) {
-    $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI']; // save current page
+    $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
 }
 ?>
-
-
-
-
-
-
-<!-- property-detail1.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>2BHK Flat in Gomti Nagar - Rentify</title>
+  <title>Studio Apartment in Vikas Nagar - Rentify</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
@@ -36,42 +30,40 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <div class="container">
     <div class="property-header">
-      <img src="./assets/images/home-img10.png" alt="2BHK Flat in Gomti Nagar">
+      <img src="./assets/images/tenant-home4.png" alt="Studio Apartment in Vikas Nagar">
     </div>
     <div class="property-info">
-      <h1>2BHK Flat in Gomti Nagar, Lucknow</h1>
-      <div class="property-meta">Furnished | 1,200 sq.ft | 3rd Floor | East Facing</div>
-      <div class="price">₹42 Lakhs</div>
+      <h1>Studio Apartment in Vikas Nagar, Lucknow</h1>
+      <div class="property-meta">Fully-Furnished | 400 sq.ft | 2nd Floor | South Facing</div>
+      <div class="price">₹5,000/month</div>
     </div>
     <div class="details-grid">
-      <div class="detail-box"><strong>Property Type:</strong> Apartment</div>
-      <div class="detail-box"><strong>BHK:</strong> 2</div>
-      <div class="detail-box"><strong>Bathrooms:</strong> 2</div>
-      <div class="detail-box"><strong>Age of Property:</strong> 5 years</div>
-      <div class="detail-box"><strong>Water Supply:</strong> 24x7</div>
-      <div class="detail-box"><strong>Parking:</strong> Covered</div>
+      <div class="detail-box"><strong>Property Type:</strong> Studio</div>
+      <div class="detail-box"><strong>BHK:</strong> 1</div>
+      <div class="detail-box"><strong>Bathrooms:</strong> 1</div>
+      <div class="detail-box"><strong>Age of Property:</strong> 1 year</div>
+      <div class="detail-box"><strong>Water Supply:</strong> Borewell</div>
+      <div class="detail-box"><strong>Parking:</strong> Two-Wheeler Only</div>
     </div>
     <h2 class="section-title">Property Description</h2>
     <div class="description">
-      Spacious 2BHK apartment with modular kitchen, well-ventilated rooms, and a scenic balcony. Near schools, hospitals and shopping center.
+      A compact studio apartment perfect for working professionals or students. Fully furnished with all basic amenities and excellent natural light.
     </div>
     <h2 class="section-title">Verification Details</h2>
     <div class="description">
-      ✔ Verified Documents<br>
-      ✔ RERA ID: UPREC123456<br>
-      ✔ Approved for Home Loans
+      ✔ Rent Agreement Available<br>
+      ✔ Aadhaar Verified Landlord<br>
+      ✔ Neighbourhood Verified by Local Police
     </div>
-
     <div class="contact-card">
-      <strong>Owner:</strong> Rahul Verma (Verified Owner)<br>
+      <strong>Landlord:</strong> Priya Singh (Verified Owner)<br>
       <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
-      📞 Phone: +91 9876543210<br>
-      📧 Email: rahul.verma@email.com
+        📞 Phone: +91 9898989898<br>
+        📧 Email: priya.rentify@email.com
       <?php else: ?>
-      <a href="login.html" class="contact-btn">Login to View Contact</a>
+        <a href="login.html" class="contact-btn">Login to View Contact</a>
       <?php endif; ?>
     </div>
-
   </div>
 </body>
 </html>

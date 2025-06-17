@@ -1,31 +1,15 @@
+<!-- tenant-property-detail3.php -->
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])) {
-    $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI']; // save current page
+    $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- property-detail2.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>3BHK Villa in Indira Nagar - Rentify</title>
+  <title>Studio Apartment in Hazratganj - Rentify</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
@@ -46,38 +30,38 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <div class="container">
     <div class="property-header">
-      <img src="./assets/images/home-img11.png" alt="3BHK Villa in Indira Nagar">
+      <img src="./assets/images/tenant-home3.png" alt="Studio Apartment in Hazratganj">
     </div>
     <div class="property-info">
-      <h1>3BHK Villa in Indira Nagar, Lucknow</h1>
-      <div class="property-meta">Semi-Furnished | 2,000 sq.ft | Duplex | West Facing</div>
-      <div class="price">₹95 Lakhs</div>
+      <h1>Studio Apartment in Hazratganj, Lucknow</h1>
+      <div class="property-meta">Fully-Furnished | 450 sq.ft | 3rd Floor | West Facing</div>
+      <div class="price">₹9,000/month</div>
     </div>
     <div class="details-grid">
-      <div class="detail-box"><strong>Property Type:</strong> Villa</div>
-      <div class="detail-box"><strong>BHK:</strong> 3</div>
-      <div class="detail-box"><strong>Bathrooms:</strong> 3</div>
+      <div class="detail-box"><strong>Property Type:</strong> Studio Apartment</div>
+      <div class="detail-box"><strong>BHK:</strong> Studio</div>
+      <div class="detail-box"><strong>Bathrooms:</strong> 1</div>
       <div class="detail-box"><strong>Age of Property:</strong> 2 years</div>
-      <div class="detail-box"><strong>Water Supply:</strong> 24x7</div>
-      <div class="detail-box"><strong>Parking:</strong> 2 Car Parking</div>
+      <div class="detail-box"><strong>Water Supply:</strong> 24x7 Municipal</div>
+      <div class="detail-box"><strong>Parking:</strong> Covered</div>
     </div>
     <h2 class="section-title">Property Description</h2>
     <div class="description">
-      A modern 3BHK duplex villa with garden space, excellent ventilation, and Italian marble flooring. Close to park and metro station.
+      A cozy and stylish studio apartment ideal for working professionals or students. Walkable distance to cafes and metro.
     </div>
     <h2 class="section-title">Verification Details</h2>
     <div class="description">
-      ✔ Legal Clearances Done<br>
-      ✔ RERA ID: UPLKO123457<br>
-      ✔ HDFC & ICICI Approved
+      ✔ Rent Agreement Available<br>
+      ✔ Police NOC<br>
+      ✔ Owner Verified by Govt. ID
     </div>
     <div class="contact-card">
-      <strong>Owner:</strong> Rahul Verma (Verified Owner)<br>
+      <strong>Landlord:</strong> Mr. Vinay Mehra (Verified Owner)<br>
       <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
-      📞 Phone: +91 9876543210<br>
-      📧 Email: rahul.verma@email.com
+        📞 Phone: +91 9876501234<br>
+        📧 Email: vinay.mehra@email.com
       <?php else: ?>
-      <a href="login.html" class="contact-btn">Login to View Contact</a>
+        <a href="login.html" class="contact-btn">Login to View Contact</a>
       <?php endif; ?>
     </div>
   </div>
