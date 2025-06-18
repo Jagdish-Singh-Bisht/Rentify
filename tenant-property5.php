@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <div class="container">
     <div class="property-header">
-      <img src="./assets/images/tenant-home5.png" alt="2BHK Builder Floor in Indira Nagar">
+      <img src="./assets/images/tenant5-img.webp" alt="2BHK Builder Floor in Indira Nagar">
     </div>
     <div class="property-info">
       <h1>2BHK Builder Floor in Indira Nagar, Lucknow</h1>

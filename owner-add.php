@@ -1,16 +1,6 @@
-<!-- <?php
-session_start();
-?> -->
+<?php session_start(); ?>
 
 
-
-<?php
-session_start();
-if (!isset($_SESSION['owner_logged_in'])) {
-  header("Location: owner-login.php");
-  exit();
-}
-?>
 
 
 

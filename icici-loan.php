@@ -23,7 +23,7 @@ session_start();
 <body>
   <div class="container">
     <div class="banner">
-      <img src="./assets/images/icici-banner.jpg" alt="ICICI Home Loan">
+      <img src="./assets/images/icici-logo.png" alt="ICICI Home Loan">
     </div>
 
     <h1>ICICI Home Loan Assistance</h1>

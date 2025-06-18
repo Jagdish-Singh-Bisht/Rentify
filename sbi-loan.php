@@ -23,7 +23,7 @@ session_start();
 <body>
   <div class="container">
     <div class="banner">
-      <img src="./assets/images/sbi-banner.jpg" alt="SBI Home Loan">
+      <img src="./assets/images/sbi-logo.jpg" alt="SBI Home Loan">
     </div>
 
     <h1>SBI Home Loan Assistance</h1>

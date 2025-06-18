@@ -23,7 +23,7 @@ session_start();
 <body>
   <div class="container">
     <div class="banner">
-      <img src="./assets/images/hdfc-banner.jpg" alt="HDFC Home Loan">
+      <img src="./assets/images/hdfc-logo.avif" alt="HDFC Home Loan">
     </div>
 
     <h1>HDFC Home Loan Assistance</h1>

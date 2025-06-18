@@ -32,15 +32,15 @@ session_start();
     <h2>Our Bank Partners</h2>
     <div class="banks">
       <div class="bank-logo">
-        <img src="./assets/images/sbi-logo.png" alt="SBI">
+        <img src="./assets/images/sbi-logo.jpg" alt="SBI">
         <a href="sbi-loan.php">Apply Now</a>
       </div>
       <div class="bank-logo">
-        <img src="./assets/images/hdfc-logo.png" alt="HDFC">
+        <img src="./assets/images/hdfc-logo.avif" alt="HDFC">
         <a href="hdfc-loan.php">Apply Now</a>
       </div>
       <div class="bank-logo">
-        <img src="./assets/images/axis-logo.png" alt="Axis">
+        <img src="./assets/images/axis-logo.jpeg" alt="Axis">
         <a href="axis-loan.php">Apply Now</a>
       </div>
       <div class="bank-logo">

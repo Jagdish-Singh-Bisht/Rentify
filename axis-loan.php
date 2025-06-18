@@ -23,7 +23,7 @@ session_start();
 <body>
   <div class="container">
     <div class="banner">
-      <img src="./assets/images/axis-banner.jpg" alt="Axis Bank Home Loan">
+      <img src="./assets/images/axis-logo.jpeg" alt="Axis Bank Home Loan">
     </div>
 
     <h1>Axis Bank Home Loan Assistance</h1>

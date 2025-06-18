@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <div class="container">
     <div class="property-header">
-      <img src="./assets/images/home-img11.png" alt="3BHK Villa in Indira Nagar">
+      <img src="./assets/images/buyer2-img.jpg" alt="3BHK Villa in Indira Nagar">
     </div>
     <div class="property-info">
       <h1>3BHK Villa in Indira Nagar, Lucknow</h1>

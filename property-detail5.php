@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <div class="container">
     <div class="property-header">
-      <img src="./assets/images/home-img14.png" alt="Studio Apartment in Aliganj">
+      <img src="./assets/images/buyer5-img.webp" alt="Studio Apartment in Aliganj">
     </div>
     <div class="property-info">
       <h1>Studio Apartment in Aliganj, Lucknow</h1>
