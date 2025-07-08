@@ -1,0 +1,91 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rentify - Real Payment</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+      font-family: sans-serif;
+      background-color: #f4f6f8;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #payBtn {
+      background-color: #27ae60;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #payBtn:hover {
+      background-color: #1e8449;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pay Rs. 500 Token Amount</h2>
+
+  <!-- 📝 User Form -->
+  <input type="text" id="name" placeholder="Full Name" required><br>
+  <input type="email" id="email" placeholder="Email Address" required><br>
+  <input type="text" id="property" placeholder="Property Interested In" required><br>
+  <input type="text" id="amount" value="500" readonly><br>
+
+  <!-- 💳 Razorpay Button -->
+  <button id="payBtn">Pay with Razorpay</button>
+
+  <script>
+    var options = {
+        "key": "rzp_test_x0ZeeQe645BBUp", // your Razorpay Test Key ID
+        "amount": 50000, // 500 INR in paisa
+        "currency": "INR",
+        "name": "Rentify",
+        "description": "Token Payment",
+        "handler": function (response){
+            // Collect user input
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var property = document.getElementById("property").value;
+            var amount = document.getElementById("amount").value;
+
+            // Send data to PHP
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "save-payment.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("payment_id=" + response.razorpay_payment_id +
+                     "&name=" + encodeURIComponent(name) +
+                     "&email=" + encodeURIComponent(email) +
+                     "&property=" + encodeURIComponent(property) +
+                     "&amount=" + encodeURIComponent(amount));
+
+            alert(" Payment Successful! Payment ID: " + response.razorpay_payment_id);
+            window.location.href = "payment-success.html"; // redirect to success page
+        }
+    };
+
+    document.getElementById('payBtn').onclick = function(e){
+      var rzp = new Razorpay(options);
+      rzp.open();
+      e.preventDefault();
+    }
+  </script>
+
+</body>
+</html>

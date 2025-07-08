@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rentify - Payment Options</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .payment-option img {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .payment-option div {
+      flex: 1;
+    }
+
+    .payment-option h3 {
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .payment-option p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rentify - Payment Options</h1>
+  </header>
+
+  <div class="container">
+    <h2>Choose Your Payment Type</h2>
+
+    <div class="payment-option">
+      <img src="images/rent.png" alt="Rent Payment">
+      <div>
+        <h3>Rent Payment</h3>
+        <p>Pay your monthly rent securely using UPI, cards, or net banking.</p>
+        <a href="rent-payment.html" class="btn">Pay Rent</a>
+      </div>
+    </div>
+
+    <div class="payment-option">
+      <img src="images/deposit.png" alt="Security Deposit">
+      <div>
+        <h3>Security Deposit</h3>
+        <p>Make your one-time refundable security deposit to confirm your booking.</p>
+        <a href="deposit-payment.html" class="btn">Pay Deposit</a>
+      </div>
+    </div>
+
+    <div class="payment-option">
+      <img src="images/token.png" alt="Token Payment">
+      <div>
+        <h3>Token Amount</h3>
+        <p>Block a property before visit or agreement by paying a small token fee.</p>
+        <a href="token-payment.html" class="btn">Pay Token</a>
+      </div>
+    </div>
+
+    <div class="payment-option">
+      <img src="images/history.png" alt="Razorpay">
+      <div>
+        <h3>Payment with Razorpay</h3>
+        <p>Do Payment  (Login required).</p>
+        <a href="razorpay-payment.html" class="btn">Razorpay</a>
+      </div>
+    </div>
+
+    <div class="payment-option">
+      <img src="images/history.png" alt="Payment History">
+      <div>
+        <h3>Payment History</h3>
+        <p>View your previous transactions and download receipts (Login required).</p>
+        <a href="payment-history.php" class="btn">View History</a>
+      </div>
+    </div>
+
+    
+
+  </div>
+
+</body>
+</html>
